@@ -119,13 +119,13 @@ export function Admin() {
       style={{
         backgroundColor: '#ffffff',
         borderRadius: '16px',
-        padding: '30px',
+        padding: '20px',
         boxShadow: '0 8px 20px rgba(214, 51, 132, 0.15)',
         border: '2px solid #f8d7da',
         color: '#333',
       }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
         <h3 style={{ color: '#c2185b', margin: 0 }}>Painel da Anfitriã</h3>
         <button
           onClick={() => setAutenticado(false)}
@@ -142,50 +142,54 @@ export function Admin() {
         </button>
       </div>
 
-      <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-        <thead>
-          <tr style={{ borderBottom: '2px solid #f8b4c4', color: '#c2185b' }}>
-            <th style={{ padding: '10px' }}>Convidado</th>
-            <th style={{ padding: '10px' }}>Fantasia</th>
-            <th style={{ padding: '10px' }}>Horário da Reserva</th>
-            <th style={{ padding: '10px', textAlign: 'center' }}>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {reservas.length === 0 ? (
-            <tr>
-              <td colSpan="4" style={{ padding: '15px', textAlign: 'center', color: '#888' }}>
-                Nenhuma reserva realizada ainda.
-              </td>
+      {/* Div que permite rolagem lateral no celular sem estourar a tela */}
+      <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+        <table style={{ width: '100%', minWidth: '400px', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #f8b4c4', color: '#c2185b' }}>
+              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Convidado</th>
+              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Fantasia</th>
+              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Horário</th>
+              <th style={{ padding: '8px', fontSize: '0.85rem', textAlign: 'center' }}>Ações</th>
             </tr>
-          ) : (
-            reservas.map((item) => (
-              <tr key={item.id} style={{ borderBottom: '1px solid #ffe6ed' }}>
-                <td style={{ padding: '10px', fontWeight: 'bold' }}>{item.nome_convidado}</td>
-                <td style={{ padding: '10px' }}>{item.nome_fantasia}</td>
-                <td style={{ padding: '10px', color: '#666', fontSize: '0.9rem' }}>
-                  {formatarDataHora(item.created_at)}
-                </td>
-                <td style={{ padding: '10px', textAlign: 'center' }}>
-                  <button
-                    onClick={() => handleExcluir(item.id)}
-                    style={{
-                      backgroundColor: '#dc3545',
-                      color: '#fff',
-                      border: 'none',
-                      padding: '4px 10px',
-                      borderRadius: '6px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    Excluir
-                  </button>
+          </thead>
+          <tbody>
+            {reservas.length === 0 ? (
+              <tr>
+                <td colSpan="4" style={{ padding: '15px', textAlign: 'center', color: '#888' }}>
+                  Nenhuma reserva realizada ainda.
                 </td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+            ) : (
+              reservas.map((item) => (
+                <tr key={item.id} style={{ borderBottom: '1px solid #ffe6ed' }}>
+                  <td style={{ padding: '8px', fontWeight: 'bold', fontSize: '0.85rem' }}>{item.nome_convidado}</td>
+                  <td style={{ padding: '8px', fontSize: '0.85rem' }}>{item.nome_fantasia}</td>
+                  <td style={{ padding: '8px', color: '#666', fontSize: '0.75rem' }}>
+                    {formatarDataHora(item.created_at)}
+                  </td>
+                  <td style={{ padding: '8px', textAlign: 'center' }}>
+                    <button
+                      onClick={() => handleExcluir(item.id)}
+                      style={{
+                        backgroundColor: '#dc3545',
+                        color: '#fff',
+                        border: 'none',
+                        padding: '4px 8px',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        fontSize: '0.75rem',
+                      }}
+                    >
+                      Excluir
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
