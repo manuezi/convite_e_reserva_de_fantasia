@@ -48,6 +48,12 @@ html, body {
   .fonte-script {
     font-size: 2.6rem !important; /* Ajusta a fonte cursiva "Aniversário da" */
   }
+
+  .titulo-reserva {
+    font-size: 1.3rem !important; /* Ajusta a fonte para caber cada palavra em sua própria linha no celular */
+    letter-spacing: 1px !important;
+    -webkit-text-stroke: 1px var(--pink-neon) !important;
+  }
 }
 
 /* Efeito Glow para Botões e Caixas */
