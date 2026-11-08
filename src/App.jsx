@@ -20,13 +20,13 @@ function App() {
     <div style={{ backgroundColor: '#0b0a0d', minHeight: '100vh', color: '#fff', paddingBottom: '40px' }}>
       
       
-      {/* Botão Admin */}
-      <header style={{ position: 'relative', padding: '20px 20px 0 20px', textAlign: 'center' }}>
+{/* Botão Admin e Cabeçalho com espaçamento ajustado */}
+      <header style={{ position: 'relative', paddingTop: '65px', paddingBottom: '10px', textAlign: 'center', zIndex: 2 }}>
         <button
           onClick={() => setVerAdmin(!verAdmin)}
           style={{
             position: 'absolute',
-            top: '15px',
+            top: '15px', /* Subiu o botão para dar mais respiro ao título */
             right: '20px',
             background: 'transparent',
             border: '1px solid #ff007f',
@@ -42,17 +42,17 @@ function App() {
           {verAdmin ? '← VOLTAR' : '🔒 ADMIN'}
         </button>
 
-        {/* Título Estilo Poster Club Corazón */}
-        <div style={{ marginTop: '20px' }}>
+        {/* Título com espaço superior extra */}
+        <div style={{ marginTop: '25px' }}>
           <span className="fonte-script" style={{ fontSize: '3.5rem', display: 'block', lineHeight: '0.9' }}>
             Aniversário da
           </span>
           <h1 className="fonte-vazada" style={{ fontSize: '3.8rem', margin: '5px 0' }}>
             {dadosFesta.nome}
           </h1>
-        <div className="subtitulo-festa" style={{ color: '#ff007f', fontWeight: 'bold', letterSpacing: '3px', fontSize: '1rem' }}>
-          ✦ {dadosFesta.subtitulo} • {dadosFesta.idade} ✦
-        </div>
+          <div className="subtitulo-festa" style={{ color: '#ff007f', fontWeight: 'bold', letterSpacing: '3px', fontSize: '1rem' }}>
+            ✦ {dadosFesta.subtitulo} • {dadosFesta.idade} ✦
+          </div>
         </div>
       </header>
 
