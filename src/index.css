@@ -5,9 +5,12 @@
   --card-bg: rgba(20, 18, 25, 0.85);
 }
 
-body {
+/* Evita que a página estique ou crie rolagem para os lados no celular */
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   background-color: var(--bg-dark);
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
@@ -54,5 +57,3 @@ body {
   transform: scale(1.02);
   box-shadow: 0 0 25px var(--pink-neon);
 }
-
-
