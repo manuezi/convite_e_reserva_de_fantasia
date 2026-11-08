@@ -50,9 +50,9 @@ function App() {
           <h1 className="fonte-vazada" style={{ fontSize: '3.8rem', margin: '5px 0' }}>
             {dadosFesta.nome}
           </h1>
-          <div style={{ color: '#ff007f', fontWeight: 'bold', letterSpacing: '3px', fontSize: '1rem' }}>
-            ✦ {dadosFesta.subtitulo} • {dadosFesta.idade} ✦
-          </div>
+        <div className="subtitulo-festa" style={{ color: '#ff007f', fontWeight: 'bold', letterSpacing: '3px', fontSize: '1rem' }}>
+          ✦ {dadosFesta.subtitulo} • {dadosFesta.idade} ✦
+        </div>
         </div>
       </header>
 

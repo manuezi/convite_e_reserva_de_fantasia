@@ -169,8 +169,13 @@ return (
         padding: '30px',
       }}
     >
-      <h3 className="fonte-vazada" style={{ textAlign: 'center', marginTop: 0, marginBottom: '20px', fontSize: '1.8rem' }}>
-        Reserve sua Fantasia
+      <h3 
+        className="fonte-vazada titulo-reserva" 
+        style={{ textAlign: 'center', marginTop: 0, marginBottom: '20px', fontSize: '1.8rem', lineHeight: '1.2' }}
+      >
+        RESERVE <br />
+        SUA <br />
+        FANTASIA
       </h3>
 
       <form onSubmit={handleReservar} style={{ marginBottom: '25px' }}>

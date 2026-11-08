@@ -54,6 +54,10 @@ html, body {
     letter-spacing: 1px !important;
     -webkit-text-stroke: 1px var(--pink-neon) !important;
   }
+  .subtitulo-festa {
+    font-size: 0.75rem !important; /* Diminui o tamanho da fonte no mobile */
+    letter-spacing: 1px !important;  /* Ajusta o espaçamento das letras para não esticar */
+  }
 }
 
 /* Efeito Glow para Botões e Caixas */
