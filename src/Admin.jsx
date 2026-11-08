@@ -50,7 +50,6 @@ export function Admin() {
     }
   }
 
-  // Função para formatar a data e hora de forma amigável
   const formatarDataHora = (dataIso) => {
     if (!dataIso) return '-'
     const data = new Date(dataIso)
@@ -68,7 +67,7 @@ export function Admin() {
         style={{
           backgroundColor: '#ffffff',
           borderRadius: '16px',
-          padding: '30px',
+          padding: '20px',
           maxWidth: '400px',
           margin: '20px auto',
           boxShadow: '0 8px 20px rgba(214, 51, 132, 0.15)',
@@ -119,69 +118,76 @@ export function Admin() {
       style={{
         backgroundColor: '#ffffff',
         borderRadius: '16px',
-        padding: '20px',
+        padding: '12px', /* Padding reduzido para dar mais espaço */
         boxShadow: '0 8px 20px rgba(214, 51, 132, 0.15)',
         border: '2px solid #f8d7da',
         color: '#333',
+        boxSizing: 'border-box',
+        width: '100%',
       }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-        <h3 style={{ color: '#c2185b', margin: 0 }}>Painel da Anfitriã</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+        <h3 style={{ color: '#c2185b', margin: 0, fontSize: '1.1rem' }}>Painel da Anfitriã</h3>
         <button
           onClick={() => setAutenticado(false)}
           style={{
-            padding: '6px 12px',
+            padding: '4px 10px',
             backgroundColor: '#6c757d',
             color: '#fff',
             border: 'none',
             borderRadius: '6px',
             cursor: 'pointer',
+            fontSize: '0.8rem',
           }}
         >
           Sair
         </button>
       </div>
 
-      {/* Div que permite rolagem lateral no celular sem estourar a tela */}
-      <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
-        <table style={{ width: '100%', minWidth: '400px', borderCollapse: 'collapse', textAlign: 'left' }}>
+      <div style={{ width: '100%', overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', tableLayout: 'fixed' }}>
           <thead>
             <tr style={{ borderBottom: '2px solid #f8b4c4', color: '#c2185b' }}>
-              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Convidado</th>
-              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Fantasia</th>
-              <th style={{ padding: '8px', fontSize: '0.85rem' }}>Horário</th>
-              <th style={{ padding: '8px', fontSize: '0.85rem', textAlign: 'center' }}>Ações</th>
+              <th style={{ padding: '6px 4px', fontSize: '0.75rem', width: '28%' }}>Convidado</th>
+              <th style={{ padding: '6px 4px', fontSize: '0.75rem', width: '30%' }}>Fantasia</th>
+              <th style={{ padding: '6px 4px', fontSize: '0.75rem', width: '26%' }}>Horário</th>
+              <th style={{ padding: '6px 2px', fontSize: '0.75rem', width: '16%', textAlign: 'center' }}>Ação</th>
             </tr>
           </thead>
           <tbody>
             {reservas.length === 0 ? (
               <tr>
-                <td colSpan="4" style={{ padding: '15px', textAlign: 'center', color: '#888' }}>
+                <td colSpan="4" style={{ padding: '15px', textAlign: 'center', color: '#888', fontSize: '0.85rem' }}>
                   Nenhuma reserva realizada ainda.
                 </td>
               </tr>
             ) : (
               reservas.map((item) => (
                 <tr key={item.id} style={{ borderBottom: '1px solid #ffe6ed' }}>
-                  <td style={{ padding: '8px', fontWeight: 'bold', fontSize: '0.85rem' }}>{item.nome_convidado}</td>
-                  <td style={{ padding: '8px', fontSize: '0.85rem' }}>{item.nome_fantasia}</td>
-                  <td style={{ padding: '8px', color: '#666', fontSize: '0.75rem' }}>
+                  <td style={{ padding: '6px 4px', fontWeight: 'bold', fontSize: '0.75rem', wordBreak: 'break-word' }}>
+                    {item.nome_convidado}
+                  </td>
+                  <td style={{ padding: '6px 4px', fontSize: '0.75rem', wordBreak: 'break-word' }}>
+                    {item.nome_fantasia}
+                  </td>
+                  <td style={{ padding: '6px 4px', color: '#666', fontSize: '0.68rem', lineBreak: 'anywhere' }}>
                     {formatarDataHora(item.created_at)}
                   </td>
-                  <td style={{ padding: '8px', textAlign: 'center' }}>
+                  <td style={{ padding: '6px 2px', textAlign: 'center' }}>
                     <button
                       onClick={() => handleExcluir(item.id)}
                       style={{
                         backgroundColor: '#dc3545',
                         color: '#fff',
                         border: 'none',
-                        padding: '4px 8px',
-                        borderRadius: '6px',
+                        padding: '4px 6px',
+                        borderRadius: '4px',
                         cursor: 'pointer',
-                        fontSize: '0.75rem',
+                        fontSize: '0.65rem',
+                        fontWeight: 'bold',
                       }}
                     >
-                      Excluir
+                      ✕
                     </button>
                   </td>
                 </tr>
