@@ -1,0 +1,397 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  color: #f8f2ff;
+  background: #260B13;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site {
+  overflow: hidden;
+  background: #260B13;
+}
+
+/* MENU */
+
+.navbar {
+  height: 85px;
+  padding: 0 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(226, 196, 255, 0.12);
+  background: #260B13;
+}
+
+.logo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: #d8b36a;
+  font-size: 23px;
+  margin-right: 8px;
+}
+
+.nav-link {
+  color: #c5b9d2;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #e3c17c;
+}
+
+/* APRESENTAÇÃO */
+
+.hero {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 12% 110px;
+  background:
+    radial-gradient(ellipse at 75% 45%, #682536 0%, transparent 40%),
+    linear-gradient(120deg, #260B13, #42121F);
+}
+
+.hero-content {
+  max-width: 550px;
+  z-index: 2;
+}
+
+.eyebrow,
+.section-eyebrow {
+  color: #d8b36a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  margin: 28px 0 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(58px, 7vw, 88px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.hero h1 span,
+.how-section h2 span {
+  color: #d8b36a;
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 420px;
+  color: #c3b7ce;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 32px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 17px 25px;
+  color: #1b1026;
+  background: #d8b36a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.primary-button:hover {
+  background: #f0d69c;
+  transform: translateY(-3px);
+}
+
+.primary-button span {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.hero-note {
+  color: #9688a4;
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+/* ILUSTRAÇÃO */
+
+.hero-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 360px;
+  flex-shrink: 0;
+}
+
+.art-circle {
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(216, 179, 106, 0.6);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle, #682536, #42121F 70%);
+  box-shadow: 0 0 80px rgba(153, 105, 189, 0.15);
+}
+
+.mask {
+  font-size: 120px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+.art-caption {
+  color: #e5c987;
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-top: 10px;
+}
+
+.art-star {
+  position: absolute;
+  color: #e5c987;
+  font-size: 27px;
+}
+
+.star-one {
+  top: 25px;
+  left: 55px;
+}
+
+.star-two {
+  right: 35px;
+  top: 95px;
+}
+
+.star-three {
+  bottom: 35px;
+  left: 35px;
+}
+
+.hero-decoration {
+  position: absolute;
+  color: #d8b36a;
+  opacity: 0.5;
+  font-size: 25px;
+}
+
+.decoration-one {
+  top: 15%;
+  left: 5%;
+}
+
+.decoration-two {
+  top: 20%;
+  right: 8%;
+}
+
+.decoration-three {
+  bottom: 20%;
+  left: 45%;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  height: 65px;
+  border-top: 1px solid rgba(226, 196, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #a99bb5;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.hero-bottom span:nth-child(2) {
+  color: #d8b36a;
+}
+
+/* COMO PARTICIPAR */
+
+.how-section {
+  padding: 110px 10%;
+  text-align: center;
+  background: #f6f0f8;
+  color: #42121F;
+}
+
+.how-section h2 {
+  margin: 18px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 55px;
+  font-weight: 500;
+}
+
+.section-description {
+  max-width: 480px;
+  margin: 0 auto;
+  color: #766b7e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 65px auto 0;
+}
+
+.step-card {
+  position: relative;
+  padding: 40px 25px;
+  border: 1px solid #e5dce9;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(45, 24, 60, 0.08);
+}
+
+.step-number {
+  color: #c5a46a;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.step-icon {
+  margin: 25px 0;
+  font-size: 35px;
+}
+
+.step-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.step-card p {
+  margin-top: 12px;
+  color: #817587;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* RODAPÉ */
+
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  background: #100b1c;
+}
+
+.footer span {
+  color: #d8b36a;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.footer p {
+  color: #9588a2;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 75px 7% 100px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-art {
+    margin-top: 45px;
+    transform: scale(0.85);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+  }
+
+  .hero-bottom {
+    left: 5%;
+    right: 5%;
+    gap: 12px;
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .hero-art {
+    transform: scale(0.75);
+    margin-top: 15px;
+    margin-bottom: -20px;
+  }
+
+  .how-section {
+    padding: 80px 7%;
+  }
+
+  .how-section h2 {
+    font-size: 45px;
+  }
+}

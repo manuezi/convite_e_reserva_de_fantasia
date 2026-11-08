@@ -1,0 +1,58 @@
+:root {
+  --pink-neon: #ff007f;
+  --pink-glow: rgba(255, 0, 127, 0.6);
+  --bg-dark: #0b0a0d;
+  --card-bg: rgba(20, 18, 25, 0.85);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Título em Estilo Texto Cursivo Retro */
+.fonte-script {
+  font-family: 'WindSong', cursive;
+  color: var(--pink-neon);
+  text-shadow: 0 0 10px var(--pink-glow), 0 0 20px var(--pink-glow);
+}
+
+/* Título em Texto Vazado (Outlined Text) */
+.fonte-vazada {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--pink-neon);
+  text-shadow: 0 0 12px var(--pink-glow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Efeito Glow para Botões e Caixas */
+.glow-box {
+  border: 2px solid var(--pink-neon);
+  box-shadow: 0 0 15px var(--pink-glow), inset 0 0 15px rgba(255, 0, 127, 0.1);
+}
+
+.btn-neon {
+  background-color: var(--pink-neon);
+  color: #000;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 0 15px var(--pink-glow);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-neon:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px var(--pink-neon);
+}
+
+
