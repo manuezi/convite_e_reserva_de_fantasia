@@ -182,7 +182,7 @@ return (
             type="text"
             value={nomeConvidado}
             onChange={(e) => setNomeConvidado(e.target.value)}
-            placeholder="Ex: Paolla Silva"
+            placeholder="Ex: Paolla Felix"
             style={{
               width: '100%',
               padding: '12px',
