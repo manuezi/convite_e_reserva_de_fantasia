@@ -97,6 +97,9 @@ function App() {
               <p style={{ color: '#ff007f', fontSize: '1.2rem', fontWeight: 'bold', lineHeight: '1.5', marginBottom: '25px' }}>
                 30tou!
               </p>
+              <p style={{ color: '#ccc', fontSize: '1rem', lineHeight: '1.5', marginBottom: '25px' }}>
+                Compra de bebidas será feita no local!
+              </p>              
 
 {/* Grid com Informações Centralizadas */}
               <div
